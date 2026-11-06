@@ -1,0 +1,115 @@
+-------------------------------------------------------
+answers.txt
+-------------------------------------------------------
+Author:  Himanya Verma
+ID:      169051154
+Email:   Verm1154@mylaurier.ca
+Date:    05/21/2025
+-------------------------------------------------------
+Answers for Lab 2
+-------------------------------------------------------
+
+Task 1:
+*/
+.org 0x1000  // Start at memory location 1000
+.text        // Code section
+.global _start
+_start:
+
+// Copy data from memory to registers
+ldr r3, =A
+ldr r0, [r3]
+ldr r3, =B
+ldr r1, [r3]
+add r2, r1, r0
+// Copy data to memory
+ldr r3, =Result // Assign address of Result to r3
+str r2, [r3] // Store contents of r2 to address in r3
+// End program
+_stop:
+b _stop
+
+.data      // Initialized data section
+A:
+.word 4
+B:
+.word 8
+.bss     // Uninitialized data section
+Result:
+.space 4 // Set aside 4 bytes for result
+
+.end
+
+
+Task 2:
+*/
+.org 0x1000  // Start at memory location 1000
+.text        // Code section
+.global _start
+_start:
+
+// Copy data from memory to registers
+ldr r3, =First
+ldr r0, [r3]
+ldr r3, =Second
+ldr r1, [r3]
+// Perform arithmetic and store results in memory
+add r2, r0, r1
+ldr r3, =Total
+str r2, [r3]
+// Subtract Second from First
+sub r2, r0, r1
+ldr r3, =Diff
+str r2, [r3]
+// End program
+_stop:
+b _stop
+
+.data // Initialized data section
+First:
+.word 4
+Second:
+.word 8
+.bss // Uninitialized data section
+Total:
+.space 4 // Set aside 4 bytes for total
+Diff:
+.space 2 // Set aside 4 bytes for difference
+
+.end
+
+
+Task 3:
+.org 0x1000  // Start at memory location 1000
+.text        // Code section
+.global _start
+_start:
+
+.text // code section
+// Copy contents of first element of Vec1 to Vec2
+ldr r0, =Vec1
+ldr r1, =Vec2
+ldr r2, [r0]
+str r2, [r1]
+// Copy contents of second element of Vec1 to Vec2
+add r0, r0, #4
+add r1, r1, #4
+ldr r2, [r0]
+str r2, [r1]
+// Copy contents of second element of Vec1 to Vec2
+add r0, r0, #4
+add r1, r1, #4
+ldr r2, [r0]
+str r2, [r1]
+// End program
+_stop:
+b _stop
+
+.data // Initialized data section
+Vec1:
+.word 1, 2, 3
+.bss // Uninitialized data section
+Vec2:
+.space 12
+
+.end

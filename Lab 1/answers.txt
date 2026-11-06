@@ -1,0 +1,21 @@
+-------------------------------------------------------
+answers.txt
+-------------------------------------------------------
+Author:  Himanya Verma
+ID:      169051154
+Email:   Verm1154@mylaurier.ca
+Date:    05/21/2025
+-------------------------------------------------------
+Answers for Lab 1
+-------------------------------------------------------
+
+Task 1:
+No, the behaviour of the program does not change. Replacing 0xE with 14 in the mov instruction for register r1 does not alter the value stored (it is 14 in both cases). The addition r0 + r1 still produces 23 in register r2.
+
+
+Task 2:
+Yes, it is legal. The instruction add r3, r3, r3 is valid in ARM assembly. Registers are read before being written, so using register r3 as both source operands and the destination is allowed.
+
+
+Task 3:
+It is not legal to add two immediate values directly (add r4, #4, #5). The ARM add instruction syntax allows only one immediate operand. Replacing one immediate with a register (add r4, r5, #5 after loading r5 with 4) works, as the syntax correctly uses one register and one immediate.

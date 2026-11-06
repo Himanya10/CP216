@@ -1,0 +1,21 @@
+-------------------------------------------------------
+answers.txt
+-------------------------------------------------------
+Author:  Himanya Verma
+ID:      169051154
+Email:   Verm1154@mylaurier.ca
+Date:    06/04/2025
+-------------------------------------------------------
+Answers for Lab 3
+-------------------------------------------------------
+
+Task 1:
+The value in register r3 when the loop completes is -1 in signed decimal and 0xFFFFFFFF in hexadecimal, because the loop starts with r3 initialized to 5 and decrements by 1 each iteration, but the bge (Branch if Greater Than or Equal) instruction continues looping while the value is greater than or equal to 0, causing it to run one extra iteration beyond zero where r3 becomes -1 before the comparison fails and exits the loop, and -1 is represented as 0xFFFFFFFF in 32-bit hexadecimal using two's complement notation.
+
+Task 2:
+The address of COUNTER in hexadecimal is 0x1018
+
+Task 3:
+Changing the LED_BITS value modifies the initial light pattern displayed on the LEDs, creating different visual effects. Changing the DELAY_TIME value adjusts the rotation speed, with smaller values making the lights change faster and larger values slowing them down.
+
+
